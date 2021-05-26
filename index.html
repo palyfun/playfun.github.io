@@ -1,3 +1,15 @@
-<p>Hello 大家好</p>
-<p>我是palyfun，这是我的个人网站。 </p>
-<p>很高兴你来到这里, 你可以在以下的网站找到我</p>
+<div class="scan"></div>
+
+  <script>
+    toDownload();
+    function toDownload() {
+      var u = navigator.userAgent;
+      var ua = u.toLowerCase();
+
+      if (/iphone|ipad|ipod/.test(ua)) {
+        window.location.href = 'https://apps.apple.com/cn/app/qmacro/id1472703277'
+      } else if (/android/.test(ua)) {
+        window.location.href = 'https://android.myapp.com/myapp/detail.htm?apkName=com.krly.keyboardsetter'
+      }
+    }
+  </script>
