@@ -1,5 +1,5 @@
- <div>
-    <div style="width: 384px;margin: auto;"> 
+<div>
+    <div style="width: 768px;margin: auto;"> 
       <div id="logoBox">
 
       </div>
@@ -7,12 +7,12 @@
        <br /> 
     </div> 
     <div> 
-      <div style="width:280px;height:304px;margin: auto;"> 
-        <a href="https://apps.apple.com/cn/app/spotled/id1564039607"> <img id="iosImg" src="" style="margin: 20px auto 0;" width="280" height="88" alt="" /></a> 
+      <div style="width:560px;height:608px;margin: auto;"> 
+        <a href="https://apps.apple.com/cn/app/spotled/id1564039607"> <img id="iosImg" src="" style="margin: 40px auto 0;" width="560" height="176" alt="" /></a> 
         <!-- <a href="">  -->
-          <img id="googleBtn" src="" style="margin:20px auto 0" width="280" height="88"/>
+          <img id="googleBtn" src="" style="margin:40px auto 0" width="560" height="176"/>
         <!-- </a> -->
-        <a href="https://led-object.oss-cn-beijing.aliyuncs.com/app/SPOTLED.apk"> <img id="adnroidImg" src="" style="margin:20px auto 0" width="280" height="88" border="0" alt="" <="" a="" /></a>
+        <a href="https://led-object.oss-cn-beijing.aliyuncs.com/app/SPOTLED.apk"> <img id="adnroidImg" src="" style="margin:40px auto 0" width="560" height="176" border="0" alt="" <="" a="" /></a>
       </div> 
     </div>
   </div>
@@ -22,8 +22,10 @@
       let logoBox = document.getElementById("logoBox");
       var logImg = document.createElement("img");
       logImg.src = "https://led-object-dev.oss-cn-beijing.aliyuncs.com/icons/logo.png";
-      logImg.style.width = "192px";
-      logImg.style.height = "192px";
+      logImg.style.width = "768px";
+      logImg.style.height = "768px";
+      logImg.style.display = "block";
+      logImg.style.margin = "auto";
       logoBox.appendChild(logImg);
       document.getElementById('iosImg').src = "https://led-object-dev.oss-cn-beijing.aliyuncs.com/icons/ios.png";
       document.getElementById('googleBtn').src = "https://led-object-dev.oss-cn-beijing.aliyuncs.com/icons/android%20gp.png";
