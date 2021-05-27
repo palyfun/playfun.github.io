@@ -14,21 +14,26 @@
     </div> 
     <div> 
       <div style="width:140px;height:152px;margin: auto;"> 
-        <a href="https://apps.apple.com/cn/app/spotled/id1564039607"> <img src="https://led-object-dev.oss-cn-beijing.aliyuncs.com/icons/ios.png" style="margin: 10px auto 0;" width="140" height="44" alt="" /></ a> 
+        <a href="https://apps.apple.com/cn/app/spotled/id1564039607"> <img id="iosImg" src="" style="margin: 10px auto 0;" width="140" height="44" alt="" /></ a> 
         <!-- <a href="">  -->
-          <img id="googleBtn" src="https://led-object-dev.oss-cn-beijing.aliyuncs.com/icons/android%20gp.png" style="margin:10px auto 0" width="140" height="44"/>
+          <img id="googleBtn" src="" style="margin:10px auto 0" width="140" height="44"/>
         <!-- </ a> -->
-        <a href="https://led-object.oss-cn-beijing.aliyuncs.com/app/SPOTLED.apk"> <img src="https://led-object-dev.oss-cn-beijing.aliyuncs.com/icons/android%20apk.png" style="margin:10px auto 0" width="140" height="44" border="0" alt="" <="" a="" /></ a>
+        <a href="https://led-object.oss-cn-beijing.aliyuncs.com/app/SPOTLED.apk"> <img id="adnroidImg" src="" style="margin:10px auto 0" width="140" height="44" border="0" alt="" <="" a="" /></ a>
       </div> 
     </div>
   </div>
 
   <script>
+    document.getElementById('iosImg').src = "https://led-object-dev.oss-cn-beijing.aliyuncs.com/icons/ios.png";
+    document.getElementById('googleBtn').src = "https://led-object-dev.oss-cn-beijing.aliyuncs.com/icons/android%20gp.png";
+    document.getElementById('adnroidImg').src = "https://led-object-dev.oss-cn-beijing.aliyuncs.com/icons/android%20apk.png";
+
+    window.onload = function () {
       let btn = document.getElementById('googleBtn');
       btn.onclick = function(){
         alert('请耐心等候，正在上线中')
       }
-   </script>
+    }
   </script>
 
 </body>
