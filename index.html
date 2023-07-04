@@ -1,38 +1,171 @@
-<div>
-    <div style="width: 768px;margin: auto;"> 
-      <div id="logoBox">
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<title>扫码下载</title>
+	</head>
+	<body>
+		<div>
+			<div style="width: 192px;margin: auto;">
+				<div id="logoBox">
 
-      </div>
-       <p style="text-align: center;font-size: 80px;"> <span size="4" color="#000000"> <strong>SPOTLED</strong></span> </p> 
-       <br /> 
-    </div> 
-    <div> 
-      <div style="width:560px;height:608px;margin: auto;"> 
-        <a href="https://apps.apple.com/cn/app/spotled/id1564039607"> <img id="iosImg" src="" style="margin: 40px auto 0;" width="560" height="176" alt="" /></a> 
-        <!-- <a href="">  -->
-          <img id="googleBtn" src="" style="margin:40px auto 0" width="560" height="176"/>
-        <!-- </a> -->
-        <a href="https://led-object.oss-cn-beijing.aliyuncs.com/app/SPOTLED.apk"> <img id="adnroidImg" src="" style="margin:40px auto 0" width="560" height="176" border="0" alt="" <="" a="" /></a>
-      </div> 
-    </div>
-  </div>
-
-  <script>
-    window.onload = function () {
-      let logoBox = document.getElementById("logoBox");
-      var logImg = document.createElement("img");
-      logImg.src = "https://led-object-dev.oss-cn-beijing.aliyuncs.com/icons/logo.png";
-      logImg.style.width = "768px";
-      logImg.style.height = "768px";
-      logImg.style.display = "block";
-      logImg.style.margin = "auto";
-      logoBox.appendChild(logImg);
-      document.getElementById('iosImg').src = "https://led-object-dev.oss-cn-beijing.aliyuncs.com/icons/ios.png";
-      document.getElementById('googleBtn').src = "https://led-object-dev.oss-cn-beijing.aliyuncs.com/icons/android%20gp.png";
-      document.getElementById('adnroidImg').src = "https://led-object-dev.oss-cn-beijing.aliyuncs.com/icons/android%20apk.png";
-      let btn = document.getElementById('googleBtn');
-      btn.onclick = function(){
-        alert('请耐心等候，正在上线中')
-      }
-    }
-  </script>
+				</div>
+				<p style="text-align: center;"> <span size="4" color="#000000"> <strong>SPOTLED</strong></span> </p>
+				<br />
+			</div>
+			<div>
+				<div style="width:140px;height:152px;margin: auto;">
+					<a href="https://apps.apple.com/cn/app/spotled/id1564039607"> <img id="iosImg" src=""
+							style="margin: 10px auto 0;" width="140" height="44" alt="" /></a>
+					<a href="https://play.google.com/store/apps/details?id=com.led.spotled"> 
+						<img id="googleBtn" src="" style="margin:10px auto 0" width="140" height="44" />
+					</a> 
+					<!-- <a href="https://raw.githubusercontent.com/palyfun/SPOTLED/SPOTLED_1.7.7/SPOTLED_1.7.7.apk"> 
+						<img id="googleBtn" src="" style="margin:10px auto 0" width="140" height="44" />
+					</a> -->
+					<!-- <a href="https://led-object.oss-cn-beijing.aliyuncs.com/app/SPOTLED.apk">  -->
+						<img id="adnroidImg" src="" style="margin:10px auto 0" width="140" height="44" border="0" alt="" />
+					<!-- </a> -->
+							
+				</div>
+				<!-- <div style="text-align: center;margin-top: 30px;font-size: 14px;color: red;">
+					华为用户下载此app前,请前往“设置”>“系统和更新”>“纯净模式”关闭此模式后再进行安装。
+				</div> -->
+			</div>
+		</div>
+		<div id="noeDiv" style="display: none;">
+			
+		</div>
+		<script src="./js/libgif.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/gifMin.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/mobel.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			window.onload = function() {
+				let logoBox = document.getElementById("logoBox");
+				var logImg = document.createElement("img");
+				logImg.src = "https://led-object-dev.oss-cn-beijing.aliyuncs.com/icons/logo.png";
+				logImg.style.width = "192px";
+				logImg.style.height = "192px";
+				logImg.style.display = "block";
+				logImg.style.margin = "auto";
+				logoBox.appendChild(logImg);
+				document.getElementById('iosImg').src = "https://led-object-dev.oss-cn-beijing.aliyuncs.com/icons/ios.png";
+				document.getElementById('googleBtn').src =
+					"https://led-object-dev.oss-cn-beijing.aliyuncs.com/icons/android%20gp.png";
+				document.getElementById('adnroidImg').src =
+					"https://led-object-dev.oss-cn-beijing.aliyuncs.com/icons/android%20apk.png";
+				// let btn = document.getElementById('googleBtn');
+				// btn.onclick = function() {
+				// 	alert('请耐心等候，正在上线中')
+				// }
+			}
+			function gifFn (gif_source){
+				var img_list = [];
+				const gifImg = document.createElement('img');
+				// gif库需要img标签配置下面两个属性
+				gifImg.setAttribute('rel:animated_src', URL.createObjectURL(gif_source));
+				gifImg.setAttribute('rel:auto_play', '0');
+				// document.body.appendChild(gifImg);
+				document.getElementById('noeDiv').appendChild(gifImg)
+				// 新建gif实例
+				var rub = new SuperGif({ gif: gifImg });
+				rub.load(() => {
+					// parent.clickIframe(rub.get_length())
+					for (let i=1; i <= rub.get_length(); i++) {
+						// Traversing through each frame of a GIF instance
+						rub.move_to(i);
+						// Converting each frame of canvas into a file object
+						let cur_file = convertCanvasToImage(rub.get_canvas(), gif_source.name.replace('.gif', '') + `-${i}`)
+						img_list.push(URL.createObjectURL(cur_file))
+					}
+					parent.clickIframe(img_list)
+				});
+			}
+			function dataURLtoFile(dataurl, filename = 'file') {
+				const arr = dataurl.split(',')
+				const mime = arr[0].match(/:(.*?);/)[1]
+				const suffix = mime.split('/')[1]
+				const bstr = atob(arr[1])
+				let n = bstr.length
+				const u8arr = new Uint8Array(n)
+				while (n--) {
+					u8arr[n] = bstr.charCodeAt(n)
+				}
+				return new File([u8arr], `${filename}.${suffix}`, { type: mime })
+			}
+			function convertCanvasToImage (canvas, filename) {
+				return dataURLtoFile(canvas.toDataURL('image/png'), filename);
+			}
+			function gifImgCompress(file) {
+				if (window.FileReader) {
+					var fr = new FileReader()
+					fr.readAsArrayBuffer(file)
+					fr.onload = function(e) {
+					var colors = 240 // 介于0~256之间数值越小压缩后文件越小
+					// eslint-disable-next-line no-undef
+					var result = gifmin(fr.result, colors) // 二进制文件流
+					var obj = new Blob([result], { // 转换成Blob对象
+						type: 'application/octet-stream'
+					})
+					let gifFile = new window.File([obj], file.name, { // 转换成file文件
+						type: file.type
+					})
+						gifFn(gifFile)
+					}
+				}
+			}
+			let brandStr = ''
+			const userAgent = navigator.userAgent.toLowerCase()
+			const isIphone = userAgent.match(/(iphone|ipad|ipod)/i)
+			const isHuawei = userAgent.match(/huawei/i)
+			const isHonnor = userAgent.match(/oppo/i)
+			const isOppo = userAgent.match(/huawei/i)
+			const isOppoR15 = userAgent.match(/PACM00/i)
+			const isVivo = userAgent.match(/vivo/i)
+			const isXiaomi = userAgent.match(/mi\s/i)
+			const isXIAOMI = userAgent.match(/xiaomi/i)
+			const isXiaomi2s = userAgent.match(/mix\s/i)
+			const isRedmi = userAgent.match(/redmi/i)
+			// if(isIphone){
+			// 	brandStr = 'iphone'
+			// }else if(isHuawei || isHonnor){
+			// 	brandStr = 'huawei'
+			// }else if(isOppo || isOppoR15){
+			// 	brandStr = 'oppo'
+			// }else if(isVivo){
+			// 	brandStr = 'vivo'
+			// }else if(isRedmi || isXIAOMI || isXiaomi){
+			// 	brandStr = 'xiaomi'
+			// }else{
+			// 	brandStr = '其它品牌'
+			// }
+			if(isOppo || isOppoR15){
+				brandStr = 'oppo'
+			}else if(isRedmi || isXIAOMI || isXiaomi){
+				brandStr = 'xiaomi'
+			}else{
+				brandStr = ''
+			}
+			let androidBtn = document.getElementById('adnroidImg')
+			androidBtn.onclick = function(){
+				let url = ''
+				if(brandStr == 'xiaomi'){
+					url = 'http://app.xiaomi.com/detail/1522222'
+				}else{
+					url = 'https://led-object.oss-cn-beijing.aliyuncs.com/app/SPOTLED.apk'
+				}
+				let a = document.createElement('a')
+				a.setAttribute('href',url)
+				a.setAttribute('target','_blank')
+				a.setAttribute('id','js_a')
+				if(document.getElementById('js_a')){
+					document.body.removeChild(document.getElementById('js_a'))
+				}
+				document.body.appendChild(a)
+				a.click()
+			}
+		</script>
+	</body>
+</html>
