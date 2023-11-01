@@ -150,12 +150,12 @@
 			}
 			let androidBtn = document.getElementById('adnroidImg')
 			androidBtn.onclick = function(){
-				let url = ''
-				if(brandStr == 'xiaomi'){
-					url = 'http://app.xiaomi.com/detail/1522222'
-				}else{
-					url = 'https://led-object.oss-cn-beijing.aliyuncs.com/app/SPOTLED.apk'
-				}
+				let url = 'https://led-object.oss-cn-beijing.aliyuncs.com/app/SPOTLED.apk'
+				// if(brandStr == 'xiaomi'){
+				// 	url = 'http://app.xiaomi.com/detail/1522222'
+				// }else{
+				// 	url = 'https://led-object.oss-cn-beijing.aliyuncs.com/app/SPOTLED.apk'
+				// }
 				let a = document.createElement('a')
 				a.setAttribute('href',url)
 				a.setAttribute('target','_blank')
